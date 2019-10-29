@@ -17,7 +17,6 @@ class ProductList extends Component {
         loadingStatus: true,
         modal: false
     };
-
     activeUserId = parseInt(sessionStorage.getItem("userId"))
 
 
@@ -132,7 +131,7 @@ class ProductList extends Component {
                     <div className="products-intro">
                         <h1>All Products</h1>
                     </div>
-                    <AddProductForm {...this.props} getData={this.getData} />
+                    <AddProductForm {...this.props} getData={this.getData}  />
           {/* <div className="event-container-cards">
             {this.state.events.map(event => (
               <EventCard
@@ -151,6 +150,7 @@ class ProductList extends Component {
             <th>Floor Location</th>
             <th>Safe Name</th>
             <th>Container Name</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>

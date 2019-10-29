@@ -71,6 +71,26 @@
       "productTypeId": 1,
       "isSold": false,
       "userId": 1
+    },
+    {
+      "userId": 1,
+      "name": "new thing",
+      "floorId": 2,
+      "safeId": 2,
+      "containerId": 2,
+      "productTypeId": 2,
+      "isSold": false,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "name": "mo's product",
+      "floorId": 8,
+      "safeId": 6,
+      "containerId": 4,
+      "productTypeId": 4,
+      "isSold": false,
+      "id": 3
     }
   ],
   "floors": [

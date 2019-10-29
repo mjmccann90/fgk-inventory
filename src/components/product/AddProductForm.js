@@ -64,14 +64,14 @@ class AddProductForm extends Component {
         this.setState(stateToChange);
     };
     handleSelectChange = evt => {
-        console.log(evt)
+        // console.log(evt)
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
 
     addProduct = evt => {
-        console.log("floorId",this.state.floorId)
+        // console.log("floorId",this.state.floorId)
         evt.preventDefault();
         this.toggle();
         if (this.state.productName === "" || this.state.floorId === "") {
@@ -81,15 +81,15 @@ class AddProductForm extends Component {
             const addedProduct = {
                 userId: this.activeUserId,
                 name: this.state.productName,
-                floorId: this.state.floorId,
-                safeId: this.state.safeLocation,
-                containerId: this.state.containerId,
-                productTypeId: this.state.productType,
+                floorId: parseInt(this.state.floorId),
+                safeId: parseInt(this.state.safeLocation),
+                containerId: parseInt(this.state.containerId),
+                productTypeId: parseInt(this.state.productType),
                 isSold: false
             };
-console.log("addedProducts", addedProduct)
+// console.log("addedProducts", addedProduct)
             APIManager.post("products", addedProduct)
-                .then(() => { this.props.getData() }
+                .then(() => { this.props.getData("products") }
                 );
         };
     }
