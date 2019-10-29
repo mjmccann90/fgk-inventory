@@ -1,0 +1,40 @@
+.welcomelogo {
+    height: 75px;
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    align-items: center;
+    }
+
+    .registrationDiv {
+        display: flex;
+        margin-top: 1em;
+        justify-content: space-around;
+        flex-direction: row;
+        height: 80%;
+        width: 100%;
+        margin: 2em;
+    }
+     .registrationButton, .loginButton  {
+        justify-content: space-evenly;
+        color: ghostwhite;
+        font-family: 'Rye', cursive;
+        font-size: 30px !important;
+        align-items: center;
+        height: 70px;
+        width: 190px;
+        margin: 1em;
+        margin-top: 50px;
+        margin-left: 60px;
+        background-color: rgb(3, 5, 75) !important;
+
+    }
+
+    .close, .add  {
+        display: flex;
+        justify-content: space-evenly;
+        font-family: 'Raleway', sans-serif;
+        color: ghostwhite;
+        font-size: 20px !important;
+        background-color: rgb(3, 5, 75) !important;
+    }

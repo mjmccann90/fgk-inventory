@@ -1,5 +1,6 @@
 // Purpose of the File: to hold functionality for sessionStorage for login, renders the <Navbar> and <ApplicationViews.js>
 import React, { Component } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ApplicationViews from './components/ApplicationViews'
 import Navbar from './components/nav/Navbar'
 class App extends Component {
@@ -34,7 +35,8 @@ class App extends Component {
         <Navbar />
         <ApplicationViews user={this.state.user}
           setUser={this.setUser}
-          triggerRender={this.triggerRender} />
+          triggerRender={this.triggerRender} {...this.props}/>
+          {/* <Login setUser={this.props.setUser} {...props} /> */}
       </React.Fragment>
     )
   }

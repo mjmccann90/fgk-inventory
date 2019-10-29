@@ -13,7 +13,7 @@ class NavBar extends Component {
 
     return (
       <header>
-        <h1  className="text">Ford Gittings and Kane Inventory<br />
+        <h1  className="text">Ford Gittings and Kane Jewelers Inventory<br />
           <small>Maybe some quote</small>
         </h1>
         <nav>

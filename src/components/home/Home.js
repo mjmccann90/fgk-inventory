@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import Footer from '../footer/Footer'
+import "../auth/Auth.css";
+
+
+
 
 class Home extends Component {
   render() {
     return (
       <>
-      <div>hello world</div>
+      <div><Footer triggerRender={this.props.triggerRender} {...this.props}/></div>
       </>
     )
   }

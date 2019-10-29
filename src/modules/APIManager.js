@@ -7,11 +7,15 @@ export default {
     get(resource, id) {
       return fetch(`${remoteURL}/${resource}/${id}`).then(result => result.json())
     },
-    getAll(resource, userId) {
+    getAllProducts(resource, userId) {
       return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=timeStamp`).then(result => result.json())
     },
+    getAll(resource) {
+      return fetch(`${remoteURL}/${resource}`).then(result => result.json())
+    },
 
-    getAllMessages(resource){
+    getAllUsers(resource){
+        console.log(resource)
       return fetch (`${remoteURL}/${resource}`).then(result => result.json())
     },
 
