@@ -64,33 +64,23 @@
   "products": [
     {
       "id": 1,
-      "name": "Hearts on Fire",
-      "floorId": 1,
-      "safeId": 1,
+      "name": "Hearts on Fire-1111",
+      "floorId": 2,
+      "safeId": 2,
       "containerId": 1,
       "productTypeId": 1,
-      "isSold": false,
+      "isSold": true,
       "userId": 1
     },
     {
       "userId": 1,
-      "name": "new thing",
+      "name": "test",
       "floorId": 2,
-      "safeId": 2,
+      "safeId": 3,
       "containerId": 2,
-      "productTypeId": 2,
-      "isSold": false,
+      "productTypeId": 3,
+      "isSold": true,
       "id": 2
-    },
-    {
-      "userId": 1,
-      "name": "mo's product",
-      "floorId": 8,
-      "safeId": 6,
-      "containerId": 4,
-      "productTypeId": 4,
-      "isSold": false,
-      "id": 3
     }
   ],
   "floors": [

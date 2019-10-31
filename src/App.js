@@ -27,21 +27,25 @@ class App extends Component {
 
   clearUser = () => {
     sessionStorage.clear();
+
+    this.setState({
+      user: this.isAuthenticated()
+  });
   }
 
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar clearUser={this.clearUser}/>
         <ApplicationViews user={this.state.user}
           setUser={this.setUser}
           triggerRender={this.triggerRender} {...this.props}/>
           {/* <Login setUser={this.props.setUser} {...props} /> */}
+
       </React.Fragment>
     )
   }
 }
-        {/* <NavBar user={this.state.user} triggerRender={this.triggerRender} clearUser={this.clearUser} /> */}
 
 
 export default App;

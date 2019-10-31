@@ -4,9 +4,12 @@ import './Navbar.css'
 
 class NavBar extends Component {
 
+  isAuthenticated = () => sessionStorage.getItem("activeUser") !== null
+
   handleLogout = () => {
     this.props.clearUser();
     this.props.history.push('/');
+    this.props.history.push("/login")
 }
 
   render(){
@@ -24,10 +27,9 @@ class NavBar extends Component {
             {/* : null } */}
             {/* {(this.props.user) ? */}
                 <>
-                <li><Link className="nav-link" to="/soldItems">Sold Items</Link></li>
+                <li><Link className="nav-link" to="/soldItems">Sold Products</Link></li>
                 <li><span className="nav-link" onClick={this.handleLogout}>Logout</span></li>
                 </>
-            {/* } */}
           </ul>
         </nav>
       </header>

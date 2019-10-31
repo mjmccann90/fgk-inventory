@@ -12,13 +12,15 @@ class ProductEditForm extends Component {
 		productName: "",
 		floorId: "",
 		floors: [],
-		safeLocation: "",
+		safeId: "",
 		safes: [],
 		containerId: "",
 		containers: [],
 		userId: "",
-		productType: "",
+		productTypeId: "",
 		productTypes: [],
+		product:{},
+		isSold: null,
 		loadingStatus: true,
 		modal: false,
 		activeUser: parseInt(sessionStorage.getItem("userId"))
@@ -29,53 +31,84 @@ class ProductEditForm extends Component {
 		stateToChange[evt.target.id] = evt.target.value;
 		this.setState(stateToChange);
 	};
+	handleSelectChange = evt => {
+        // console.log(evt)
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange);
+    };
 
 	updateExistingProduct = evt => {
 		evt.preventDefault();
 		this.setState({ loadingStatus: true });
 		const editedProduct = {
-			id: parseInt(this.props.productId),
-			productName: this.state.productName,
-			floorId: this.state.floorId,
-			floors:this.state.floors,
-			safeLocation: this.state.safeLocation,
-			containerId: this.state.containerId,
-			productType: this.state.productType,
-
+			name: this.state.productName,
+			floorId: parseInt(this.state.floorId),
+			safeId: parseInt(this.state.safeId),
+			containerId: parseInt(this.state.containerId),
+			productTypeId: parseInt(this.state.productTypeId),
+			isSold: this.state.isSold,
 			userId: this.state.activeUser
 		};
 		console.log(editedProduct)
-		APIManager.update("product", editedProduct)
-			.then(() => { this.props.getData() }
-			);
+		APIManager.update("products", editedProduct, this.state.product.id)
+			.then(() => this.props.getData());
 	}
-
+	getFloors = () => {
+        APIManager.getAll("floors").then((floors) => this.setState({floors:floors
+        }))
+	}
+	getSafes = () => {
+        APIManager.getAll("safes").then((safes) => this.setState({safes:safes
+        }))
+	}
+	getContainers = () => {
+        APIManager.getAll("containers").then((containers) => this.setState({containers:containers
+        }))
+    }
+    getProductTypes = () => {
+        APIManager.getAll("productTypes").then((productTypes) => this.setState({productTypes:productTypes
+        }))
+    }
 
 	componentDidMount() {
-		return APIManager.get("products", this.props.productId)
+		// const myNewState ={}
+		APIManager.get("products", this.props.product.id)
 			.then(
 				product => {
+					console.log("something infort of it",product)
 					this.setState({
-						productName: product.productName,
+						product: product,
+						productName: product.name,
 						floorId: product.floorId,
-						safeLocation: product.safeLocation,
+						safeId: product.safeId,
 						containerId: product.containerId,
-						productType: product.productType,
+						productTypeId: product.productTypeId,
+						isSold: product.isSold,
 						loadingStatus: false,
 					});
-				});
+				}).then(()=>this.getFloors())
+				.then(()=>this.getSafes())
+				.then(()=>this.getContainers())
+				.then(()=>this.getProductTypes());
 	};
 	toggle = () => {
         this.setState(prevState => ({
             modal: !prevState.modal
         }));
+	}
+	handleIsSold = (evt) => {
+		const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.checked;
+        this.setState(stateToChange);
     }
 	render() {
 		const closeBtn = (
 			<button className="close" onClick={this.toggle}>
-				click me
+				x
 			</button>
 		);
+		console.log(this.state.floorId)
 		return (
 			<>
 
@@ -102,38 +135,42 @@ class ProductEditForm extends Component {
 									className="form-control"
 									onChange={this.handleFieldChange}
 									id="productName"
-									value={this.state.productName}
+									defaultValue={this.state.productName}
 								/>
 
 								<label htmlFor="floor">Floor Location:</label>
-								<select value={this.state.floorId} id="floorId" onChange={this.handleSelectChange}>
+								{this.state.floors ? <select value={this.state.floorId} id="floorId" onChange={this.handleSelectChange}>
 									{this.state.floors.map(floor =>
 										<FloorOptions key={floor.id} floor={floor} />
 									)}
 								</select>
+								: ""}
 
 								<label htmlFor="safe">Safe Location:</label>
-								<select value={this.state.safeLocation} id="safeLocation" onChange={this.handleSelectChange}>
+								{this.state.safes ? <select defaultValue={this.state.safeId} id="safeId" onChange={this.handleSelectChange}>
 									{this.state.safes.map(safe =>
 										<SafeOptions key={safe.id} safe={safe} />
 									)}
 								</select>
+								: ""}
 
 								<label htmlFor="container">Container Location:</label>
-								<select value={this.state.containerId} id="containerId" onChange={this.handleSelectChange}>
+								{this.state.containers ? <select defaultValue={this.state.containerId} id="containerId" onChange={this.handleSelectChange}>
 									{this.state.containers.map(container =>
 										<ContainerOptions key={container.id} container={container} />
 									)}
 								</select>
+								: ""}
 
 								<label htmlFor="productType">Product Type:</label>
-								<select value={this.state.productType} id="productType" onChange={this.handleSelectChange}>
+								{this.state.productTypes ? <select defaultValue={this.state.productTypeId} id="productTypeId" onChange={this.handleSelectChange}>
 									{this.state.productTypes.map(productTypes =>
 										<ProductTypeOptions key={productTypes.id} productType={productTypes} />
 									)}
 								</select>
+								: ""}
 
-
+							<input type="checkbox" id="isSold" onChange={this.handleIsSold}></input>
 							</div>
 							<div className="alignRight">
 							</div>
@@ -147,13 +184,13 @@ class ProductEditForm extends Component {
 						disabled={this.state.loadingStatus}
 						onClick={evt => {
 							this.updateExistingProduct(evt);
-							this.props.toggle();
+							this.toggle();
 						}}
 						className="btn btn-primary"
 					>
 						Submit
 					</Button>
-					<Button className="cancel" onClick={this.props.toggle}>
+					<Button className="cancel" onClick={this.toggle}>
 						Cancel
 					</Button>
 				</ModalFooter>

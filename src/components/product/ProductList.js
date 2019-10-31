@@ -28,7 +28,7 @@ class ProductList extends Component {
 
     deleteProduct = id => {
         APIManager.delete("products", id).then(() => {
-            APIManager.getAll("products").then(newProducts => {
+            APIManager.getAllUnsoldProducts("products").then(newProducts => {
                 this.setState({
                     products: newProducts
                 });
@@ -87,10 +87,11 @@ class ProductList extends Component {
         })
         // console.log(this.state.products)
     }
-    getData = (thingWeWant) => APIManager.getAll(thingWeWant, this.activeUserId)
+    getData = () => APIManager.getAllUnsoldProducts("products")
         .then(things => {
+            console.log("RUNNING",things)
             const newState = {};
-            newState[thingWeWant] = things;
+            newState["products"] = things;
             this.setState(newState)
             // console.log('this.state',this.state)
 
@@ -132,17 +133,6 @@ class ProductList extends Component {
                         <h1>All Products</h1>
                     </div>
                     <AddProductForm {...this.props} getData={this.getData}  />
-          {/* <div className="event-container-cards">
-            {this.state.events.map(event => (
-              <EventCard
-                key={event.id}
-                event={event}
-                deleteEvent={this.deleteEvent}
-                {...this.props}
-                getData={this.getData}
-              />
-            ))}
-          </div> */}
           <Table striped>
         <thead>
           <tr>
@@ -150,15 +140,17 @@ class ProductList extends Component {
             <th>Floor Location</th>
             <th>Safe Name</th>
             <th>Container Name</th>
+            <th>Product Type</th>
             <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {this.state.products.map((product, index) => {
               console.log(product)
             return (
-                this.state.loadingStatus === false ? 
-                    <ProductTable key={product.id} product={product} safes={this.state.safes} containers={this.state.containers} floors={this.state.floors} />
+                this.state.loadingStatus === false ?
+                    <ProductTable getData={this.getData} key={product.id} product={product} safes={this.state.safes} containers={this.state.containers} floors={this.state.floors} productTypes={this.state.productTypes} deleteProduct={this.deleteProduct}/>
                     : null
 
             )

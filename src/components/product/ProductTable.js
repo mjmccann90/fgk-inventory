@@ -8,6 +8,7 @@ class ProductTable extends Component {
     floor: {},
     container: {},
     safe:{},
+    productType:{},
     loadingStatus: true
   };
   componentDidMount() {
@@ -15,15 +16,12 @@ class ProductTable extends Component {
     console.log("example variable", exampleVariable)
     const newState = {};
     newState.floor = this.props.floors.find(floor => floor.id === this.props.product.floorId)
-    // console.log(newState)
     newState.container = this.props.containers.find(container => container.id === this.props.product.containerId)
     newState.safe = this.props.safes.find(safe => safe.id === this.props.product.safeId)
+    newState.productType = this.props.productTypes.find(productType => productType.id === this.props.product.productTypeId)
 
-    // console.log("this is props.floorId",this.props.product)
     newState.loadingStatus = false
-    // console.log(newState)
     this.setState(newState)
-    // console.log("this is state.floor", this.state.floor)
   }
   render() {
     return (
@@ -41,7 +39,11 @@ class ProductTable extends Component {
         {this.state.loadingStatus === false ?
           <td>{this.state.container.name}</td>
           : null}
-          <td><ProductEditForm/></td>
+        {this.state.loadingStatus === false ?
+          <td>{this.state.productType.name}</td>
+          : null}
+          <td><ProductEditForm getData={this.props.getData} product={this.props.product}/></td>
+          <td><button type="button" onClick={() => this.props.deleteProduct(this.props.product.id)}>Delete Product</button></td>
       </tr>
 
 

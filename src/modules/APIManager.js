@@ -8,7 +8,13 @@ export default {
       return fetch(`${remoteURL}/${resource}/${id}`).then(result => result.json())
     },
     getAllProducts(resource, userId) {
-      return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=timeStamp`).then(result => result.json())
+      return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=timeStamp&isSold=false`).then(result => result.json())
+    },
+    getAllUnsoldProducts(resource) {
+      return fetch(`${remoteURL}/${resource}?isSold=false`).then(result => result.json())
+    },
+    getAllSoldProducts(resource) {
+      return fetch(`${remoteURL}/${resource}?isSold=true`).then(result => result.json())
     },
     getAll(resource) {
       return fetch(`${remoteURL}/${resource}`).then(result => result.json())
@@ -34,9 +40,10 @@ export default {
         body: JSON.stringify(newResource)
     }).then(data => data.json())
   },
-  update(resource, editedResource) {
-    return fetch(`${remoteURL}/${resource}/${editedResource.id}`, {
-      method: "PUT",
+  update(resource, editedResource, productId) {
+    console.log("app fetch", productId)
+    return fetch(`${remoteURL}/${resource}/${productId}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
