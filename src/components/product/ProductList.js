@@ -100,7 +100,7 @@ class ProductList extends Component {
     componentDidMount() {
         const newState = {};
         //getAll from APIManager and hang on to that data; put it in state
-        const getAllProducts = APIManager.getAllProducts("products", this.activeUserId).then(products => {
+        const getAllProducts = APIManager.getAllProducts("products").then(products => {
             newState.products = products
         })
         const getAllSafes = APIManager.getAll("safes").then(safes => {

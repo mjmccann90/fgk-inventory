@@ -59,6 +59,12 @@
       "email": "mo@mo.com",
       "password": "mo",
       "id": 10
+    },
+    {
+      "name": "test",
+      "email": "test@test.com",
+      "password": "test",
+      "id": 11
     }
   ],
   "products": [
@@ -81,6 +87,26 @@
       "productTypeId": 3,
       "isSold": true,
       "id": 2
+    },
+    {
+      "userId": 1,
+      "name": "Bulova",
+      "floorId": 21,
+      "safeId": 3,
+      "containerId": 21,
+      "productTypeId": 6,
+      "isSold": true,
+      "id": 4
+    },
+    {
+      "userId": null,
+      "name": "Rolex",
+      "floorId": 20,
+      "safeId": 3,
+      "containerId": 20,
+      "productTypeId": 6,
+      "isSold": false,
+      "id": 5
     }
   ],
   "floors": [
@@ -180,7 +206,7 @@
     },
     {
       "id": 3,
-      "name": "Watchs"
+      "name": "Watches"
     },
     {
       "id": 4,
@@ -290,7 +316,7 @@
     },
     {
       "id": 21,
-      "name": "New Side Rolex Container"
+      "name": "New Side Bulova Container"
     }
   ],
   "productTypes": [

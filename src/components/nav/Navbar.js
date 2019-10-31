@@ -28,6 +28,7 @@ class NavBar extends Component {
             {/* {(this.props.user) ? */}
                 <>
                 <li><Link className="nav-link" to="/soldItems">Sold Products</Link></li>
+                <li><Link className="nav-link" to="/MySoldItems">My Sold Products</Link></li>
                 <li><span className="nav-link" onClick={this.handleLogout}>Logout</span></li>
                 </>
           </ul>

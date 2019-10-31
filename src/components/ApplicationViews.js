@@ -5,7 +5,7 @@ import Home from './home/Home'
 import Footer from './footer/Footer'
 import ProductList from './product/ProductList'
 import SoldProductList from './soldProduct/SoldProductList'
-
+import MySoldProductList from './soldProduct/MySoldProductList'
 
 
 class ApplicationViews extends Component {
@@ -30,6 +30,9 @@ class ApplicationViews extends Component {
                 }} />
                 <Route path="/soldItems" render={(props) => {
                     return <SoldProductList  />
+                }} />
+                <Route path="/MySoldItems" render={(props) => {
+                    return <MySoldProductList  />
                 }} />
             </React.Fragment>
         )
