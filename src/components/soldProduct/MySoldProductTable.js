@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 
 
-class SoldProductTable extends Component {
+class MySoldProductTable extends Component {
   state = {
     user: {},
     productType:{},
@@ -32,4 +32,4 @@ class SoldProductTable extends Component {
   }
 }
 
-export default SoldProductTable;
+export default MySoldProductTable;

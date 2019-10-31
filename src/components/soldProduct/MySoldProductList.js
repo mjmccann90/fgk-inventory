@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import APIManager from "../../modules/APIManager";
-import SoldProductTable from "./SoldProductTable"
+import MySoldProductTable from "./MySoldProductTable"
 import { Table } from 'reactstrap';
 
 
 
-class SoldProductList extends Component {
+class MySoldProductList extends Component {
     //define what this component needs to render
     state = {
         products: [],
@@ -22,6 +22,7 @@ class SoldProductList extends Component {
             modal: !prevState.modal
         }));
     };
+
     formatProductWithProductTypeName = (products, productTypes) => {
         const soldProducts = products.map(product => {
             productTypes.map(productType => {
@@ -35,7 +36,7 @@ class SoldProductList extends Component {
         })
         // console.log(this.state.products)
     }
-    getData = () => APIManager.getAllSoldProducts("products")
+    getData = () => APIManager.getAllMySoldProducts("products")
         .then(things => {
             console.log("RUNNING",things)
             const newState = {};
@@ -48,7 +49,7 @@ class SoldProductList extends Component {
     componentDidMount() {
         const newState = {};
         //getAll from APIManager and hang on to that data; put it in state
-        const getAllProducts = APIManager.getAllSoldProducts("products", this.activeUserId).then(products => {
+        const getAllProducts = APIManager.getAllMySoldProducts("products", this.activeUserId).then(products => {
             newState.products = products
         })
         const getAllProductTypes = APIManager.getAll("productTypes").then(productTypes => {
@@ -66,15 +67,15 @@ class SoldProductList extends Component {
     render() {
         return (
             <>
-                <div className="sold-products-container">
-                    <div className="sold-products-intro">
-                        <h1>All Sold Products</h1>
+                <div className="my-sold-products-container">
+                    <div className="my-sold-products-intro">
+                        <h1>My Sold Products</h1>
                     </div>
           <Table striped>
         <thead>
           <tr>
             <th>Name</th>
-            <th>User who sold the item</th>
+            <th>User that Sold the Product</th>
             <th>Product Type</th>
           </tr>
         </thead>
@@ -83,7 +84,7 @@ class SoldProductList extends Component {
               console.log(product)
             return (
                 this.state.loadingStatus === false ?
-                    <SoldProductTable getData={this.getData} key={product.id} product={product} users={this.state.users}productTypes={this.state.productTypes} />
+                    <MySoldProductTable getData={this.getData} key={product.id} product={product} users={this.state.users}productTypes={this.state.productTypes} />
                     : null
 
             )
@@ -97,4 +98,4 @@ class SoldProductList extends Component {
     }
 }
 
-export default SoldProductList;
+export default MySoldProductList;

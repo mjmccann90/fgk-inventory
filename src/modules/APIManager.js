@@ -7,18 +7,25 @@ export default {
     get(resource, id) {
       return fetch(`${remoteURL}/${resource}/${id}`).then(result => result.json())
     },
-    getAllProducts(resource, userId) {
-      return fetch(`${remoteURL}/${resource}?userId=${userId}&_sort=timeStamp&isSold=false`).then(result => result.json())
+    getAllProducts(resource) {
+      return fetch(`${remoteURL}/${resource}?_sort=timeStamp&isSold=false`).then(result => result.json())
     },
     getAllUnsoldProducts(resource) {
       return fetch(`${remoteURL}/${resource}?isSold=false`).then(result => result.json())
     },
     getAllSoldProducts(resource) {
-      return fetch(`${remoteURL}/${resource}?isSold=true`).then(result => result.json())
+      return fetch(`${remoteURL}/${resource}?isSold=true&&_expand=user`).then(result => result.json())
+    },
+    getAllMySoldProducts(resource, userId) {
+      return fetch(`${remoteURL}/${resource}?userId=${userId}&isSold=true&_expand=user`).then(result => result.json())
     },
     getAll(resource) {
       return fetch(`${remoteURL}/${resource}`).then(result => result.json())
     },
+    getWithProducts(id) {
+      return fetch(`${remoteURL}/products/${id}?_embed=users`)
+              .then(result => result.json())
+  },
 
     getAllUsers(resource){
         console.log(resource)

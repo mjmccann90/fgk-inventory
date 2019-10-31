@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ProductEditForm from "./ProductEditForm"
+import { Button } from "reactstrap";
+
 
 
 
@@ -43,7 +45,7 @@ class ProductTable extends Component {
           <td>{this.state.productType.name}</td>
           : null}
           <td><ProductEditForm getData={this.props.getData} product={this.props.product}/></td>
-          <td><button type="button" onClick={() => this.props.deleteProduct(this.props.product.id)}>Delete Product</button></td>
+          <td><Button type="button" color="secondary" onClick={() => this.props.deleteProduct(this.props.product.id)}>Delete Product</Button></td>
       </tr>
 
 
