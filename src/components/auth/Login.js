@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import "./Login.css";
+import "./Auth.css";
 import APIManager from "../../modules/APIManager";
+
 
 class Login extends Component {
 
@@ -30,7 +31,8 @@ class Login extends Component {
 
     handleLogin = (e) => {
         e.preventDefault()
-        APIManager.getAll("users").then((users) => {
+        APIManager.getAllUsers("users").then((users) => {
+            console.log (users)
             let singleUser = users.find(
                 user =>
                     user.password.toLowerCase() === this.state.password.toLowerCase() &&
@@ -46,7 +48,7 @@ class Login extends Component {
                 sessionStorage.setItem("userId", singleUser.id);
                 sessionStorage.setItem("email", this.state.email);
                 sessionStorage.setItem("name", this.state.name);
-                this.props.triggerRender();
+                // this.props.triggerRender();
                 this.props.history.push("/");
             } else {
                 window.alert("Credentials do not match")
@@ -62,11 +64,11 @@ class Login extends Component {
         return (
             <div>
                 <div className="header">
-                    {/* <img
+                    <img
                         className="welcomelogo"
-                        src={require("../../images/loginbanner.png")}
+                        src={require("../../images/FGK-Logo1.png")}
                         alt="logo"
-                    /> */}
+                    />
                 </div>
                 <div className="registrationDiv">
                     <Button
@@ -109,24 +111,24 @@ class Login extends Component {
                                         <label htmlFor="inputPassword">
                                             Password
 									</label>
-									<br></br>
-									<input
-										onChange={this.handleFieldChange}
-										type="password"
-										id="password"
-										placeholder="Password"
-										required=""
-									/>
-								</div>
-							</fieldset>
-						</form>
-					</ModalBody>
-					<ModalFooter>
-						<Button className="add" onClick={this.handleLogin}>
-							Sign In
+                                        <br></br>
+                                        <input
+                                            onChange={this.handleFieldChange}
+                                            type="password"
+                                            id="password"
+                                            placeholder="Password"
+                                            required=""
+                                        />
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="primary" className="add" onClick={this.handleLogin}>
+                                Sign In
 						</Button>{" "}
-						<Button className="close" onClick={this.toggle}>
-							Cancel
+                            <Button color="secondary" className="close" onClick={this.toggle}>
+                                Cancel
 						</Button>
                         </ModalFooter>
                     </Modal>

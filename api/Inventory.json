@@ -1,0 +1,334 @@
+{
+  "users": [
+    {
+      "name": "Mark",
+      "email": "mark@mark.com",
+      "password": "mark",
+      "id": 1
+    },
+    {
+      "name": "test",
+      "email": "me@me.com",
+      "password": "me",
+      "id": 2
+    },
+    {
+      "name": "me",
+      "email": "me1@me.com",
+      "password": "me1",
+      "id": 3
+    },
+    {
+      "name": "nick",
+      "email": "nick@nick.com",
+      "password": "nick",
+      "id": 4
+    },
+    {
+      "name": "sage",
+      "email": "sage@sage.com",
+      "password": "sage",
+      "id": 5
+    },
+    {
+      "name": "jack",
+      "email": "jack@jack.com",
+      "password": "jack",
+      "id": 6
+    },
+    {
+      "name": "dad",
+      "email": "dad@dad.com",
+      "password": "dad",
+      "id": 7
+    },
+    {
+      "name": "maddie",
+      "email": "maddie@maddie.com",
+      "password": "maddie",
+      "id": 8
+    },
+    {
+      "name": "dhdfhj",
+      "email": "test@me.com",
+      "password": "me",
+      "id": 9
+    },
+    {
+      "name": "mo",
+      "email": "mo@mo.com",
+      "password": "mo",
+      "id": 10
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Hearts on Fire-1111",
+      "floorId": 2,
+      "safeId": 2,
+      "containerId": 1,
+      "productTypeId": 1,
+      "isSold": true,
+      "userId": 1
+    },
+    {
+      "userId": 1,
+      "name": "test",
+      "floorId": 2,
+      "safeId": 3,
+      "containerId": 2,
+      "productTypeId": 3,
+      "isSold": true,
+      "id": 2
+    }
+  ],
+  "floors": [
+    {
+      "id": 1,
+      "name": "Origin Side Front"
+    },
+    {
+      "id": 2,
+      "name": "Original Side Front Middle"
+    },
+    {
+      "id": 3,
+      "name": "Original Side Front Right"
+    },
+    {
+      "id": 4,
+      "name": "Original Side Middle Right"
+    },
+    {
+      "id": 5,
+      "name": "Original Side Back Right"
+    },
+    {
+      "id": 6,
+      "name": "Original Side Back Middle"
+    },
+    {
+      "id": 7,
+      "name": "Original Side Left Back"
+    },
+    {
+      "id": 8,
+      "name": "Original Side Left Middle"
+    },
+    {
+      "id": 9,
+      "name": "Original Side Front Left"
+    },
+    {
+      "id": 10,
+      "name": "Original Side Diamond Room"
+    },
+    {
+      "id": 11,
+      "name": "New Side Front"
+    },
+    {
+      "id": 12,
+      "name": "New Side Front Middle"
+    },
+    {
+      "id": 13,
+      "name": "New Side Front Right"
+    },
+    {
+      "id": 14,
+      "name": "New Side Middle Right"
+    },
+    {
+      "id": 15,
+      "name": "New Side Back Right"
+    },
+    {
+      "id": 16,
+      "name": "New Side Back Middle"
+    },
+    {
+      "id": 17,
+      "name": "New Side Left Back"
+    },
+    {
+      "id": 18,
+      "name": "New Side Left Middle"
+    },
+    {
+      "id": 19,
+      "name": "New Side Front Left"
+    },
+    {
+      "id": 20,
+      "name": "New Side Rolex Display"
+    },
+    {
+      "id": 21,
+      "name": "New Side Bulova Display"
+    }
+  ],
+  "safes": [
+    {
+      "id": 1,
+      "name": "Rings"
+    },
+    {
+      "id": 2,
+      "name": "The OG"
+    },
+    {
+      "id": 3,
+      "name": "Watchs"
+    },
+    {
+      "id": 4,
+      "name": "Diamond Room"
+    },
+    {
+      "id": 5,
+      "name": "Work Bench"
+    },
+    {
+      "id": 6,
+      "name": "Necklaces"
+    },
+    {
+      "id": 7,
+      "name": "Store Room A"
+    },
+    {
+      "id": 8,
+      "name": "Store Room B"
+    },
+    {
+      "id": 9,
+      "name": "Store Room C"
+    }
+  ],
+  "containers": [
+    {
+      "id": 1,
+      "name": "Origin Side Front Container"
+    },
+    {
+      "id": 2,
+      "name": "Origin Side Front Middle Container"
+    },
+    {
+      "id": 3,
+      "name": "Origin Side Front Right Container"
+    },
+    {
+      "id": 4,
+      "name": "Origin Side Middle Right Container"
+    },
+    {
+      "id": 5,
+      "name": "Origin Side Back Right Container"
+    },
+    {
+      "id": 6,
+      "name": "Origin Side Back Middle Container"
+    },
+    {
+      "id": 7,
+      "name": "Origin Side Back Left Container"
+    },
+    {
+      "id": 8,
+      "name": "Origin Side Middle Left Container"
+    },
+    {
+      "id": 9,
+      "name": "Origin Side Front Left Container"
+    },
+    {
+      "id": 10,
+      "name": "Origin Side Diamond Room Container"
+    },
+    {
+      "id": 11,
+      "name": "New Side Front Container"
+    },
+    {
+      "id": 12,
+      "name": "New Side Front Middle Container"
+    },
+    {
+      "id": 13,
+      "name": "New Side Front Right Container"
+    },
+    {
+      "id": 14,
+      "name": "New Side Right Middle Container"
+    },
+    {
+      "id": 15,
+      "name": "New Side Back Right Container"
+    },
+    {
+      "id": 16,
+      "name": "New Side Back Middle Container"
+    },
+    {
+      "id": 17,
+      "name": "New Side Back Left Container"
+    },
+    {
+      "id": 18,
+      "name": "New Side Middle Left Container"
+    },
+    {
+      "id": 19,
+      "name": "New Side Front Left Container"
+    },
+    {
+      "id": 20,
+      "name": "New Side Rolex Container"
+    },
+    {
+      "id": 21,
+      "name": "New Side Rolex Container"
+    }
+  ],
+  "productTypes": [
+    {
+      "id": 1,
+      "name": "Ring"
+    },
+    {
+      "id": 2,
+      "name": "Necklace"
+    },
+    {
+      "id": 3,
+      "name": "Bracelet"
+    },
+    {
+      "id": 4,
+      "name": "Earrings"
+    },
+    {
+      "id": 5,
+      "name": "Antique Jewelry"
+    },
+    {
+      "id": 6,
+      "name": "Wrist Watch"
+    },
+    {
+      "id": 7,
+      "name": "Pocket Watch"
+    },
+    {
+      "id": 8,
+      "name": "Antique Watch"
+    },
+    {
+      "id": 9,
+      "name": "Mantel Clock"
+    }
+  ]
+}

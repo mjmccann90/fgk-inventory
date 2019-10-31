@@ -7,7 +7,7 @@ small {
     background-image:
       radial-gradient(
         circle at top right,
-        rgb(16, 117, 212),
+        rgb(102, 107, 133),
         #24326e 75%
       );
   }
@@ -40,7 +40,7 @@ small {
     background-image:
       radial-gradient(
         circle at top right,
-        rgb(16, 117, 212),
+        rgb(102, 107, 133),
         #24326e 75%
       );
     list-style-type: none;
