@@ -79,7 +79,7 @@ class AddProductForm extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const addedProduct = {
-                userId: null,
+                userId: this.activeUserId,
                 name: this.state.productName,
                 floorId: parseInt(this.state.floorId),
                 safeId: parseInt(this.state.safeLocation),

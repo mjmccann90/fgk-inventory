@@ -5,6 +5,7 @@ import FloorOptions from './FloorOptions'
 import SafeOptions from './SafeOptions'
 import ContainerOptions from './ContainerOptions'
 import ProductTypeOptions from './ProductTypeOptions'
+// import "./ProductEditForm.css"
 
 class ProductEditForm extends Component {
 	//set the initial state
@@ -111,7 +112,7 @@ class ProductEditForm extends Component {
 		console.log(this.state.floorId)
 		return (
 			<>
-
+			<div className="editDiv">
                 <Button className="addProduct" onClick={this.toggle}>
                     Edit</Button>
 					<Modal
@@ -120,7 +121,7 @@ class ProductEditForm extends Component {
                     className={this.props.className}
                 >
 				<ModalHeader toggle={this.toggle} close={closeBtn}>
-                        Create Product
+                        Edit Product
 					</ModalHeader>
 				<ModalBody>
 					<form>
@@ -162,14 +163,14 @@ class ProductEditForm extends Component {
 								</select>
 								: ""}
 
-								<label htmlFor="productType">Product Type:</label>
+								<label htmlFor="productType">Product Type: </label>
 								{this.state.productTypes ? <select defaultValue={this.state.productTypeId} id="productTypeId" onChange={this.handleSelectChange}>
 									{this.state.productTypes.map(productTypes =>
 										<ProductTypeOptions key={productTypes.id} productType={productTypes} />
 									)}
 								</select>
 								: ""}
-
+							<label htmlFor="isSold">Sold: </label>
 							<input type="checkbox" id="isSold" onChange={this.handleIsSold}></input>
 							</div>
 							<div className="alignRight">
@@ -181,7 +182,6 @@ class ProductEditForm extends Component {
 				<ModalFooter>
 					<Button
 						type="button"
-						disabled={this.state.loadingStatus}
 						onClick={evt => {
 							this.updateExistingProduct(evt);
 							this.toggle();
@@ -195,6 +195,7 @@ class ProductEditForm extends Component {
 					</Button>
 				</ModalFooter>
 				</Modal>
+				</div>
 			</>
 		);
 	}

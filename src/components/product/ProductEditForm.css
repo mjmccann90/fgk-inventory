@@ -1,0 +1,9 @@
+.editDiv {
+    display: flex;
+    margin-top: 1em;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+    margin: 2em;
+}

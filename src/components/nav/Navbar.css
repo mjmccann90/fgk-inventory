@@ -15,8 +15,10 @@ small {
   .text {
     color: ghostwhite;
     text-align: center;
+    font-family: 'Rye', cursive;
+
   }
-  
+
   nav .container {
     display: flex;
     padding: 0;
@@ -33,8 +35,9 @@ small {
     flex: 1;
     padding: 10px;
     text-align: center;
-    font-size: 1.5em;
-    color: cornsilk;
+    font-size: 1.25em;
+    font-family: 'Rye', cursive;
+    color: ghostwhite;
     box-sizing: border-box;
     background-color: red;
     background-image:
@@ -47,7 +50,7 @@ small {
   }
   
   nav .container a {
-    color: cornsilk;
+    color: ghostwhite;
   }
   
   nav .container a:hover {

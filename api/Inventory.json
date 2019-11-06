@@ -43,9 +43,9 @@
       "id": 7
     },
     {
-      "name": "maddie",
-      "email": "maddie@maddie.com",
-      "password": "maddie",
+      "name": "madie",
+      "email": "madie@madie.com",
+      "password": "madie",
       "id": 8
     },
     {
@@ -99,14 +99,74 @@
       "id": 4
     },
     {
-      "userId": null,
+      "userId": 1,
+      "name": "test",
+      "floorId": 2,
+      "safeId": 3,
+      "containerId": 20,
+      "productTypeId": 6,
+      "isSold": true,
+      "id": 5
+    },
+    {
+      "userId": 1,
       "name": "Rolex",
       "floorId": 20,
       "safeId": 3,
       "containerId": 20,
       "productTypeId": 6,
-      "isSold": false,
-      "id": 5
+      "isSold": true,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "name": "Bulova-1",
+      "floorId": 21,
+      "safeId": 3,
+      "containerId": 21,
+      "productTypeId": 6,
+      "isSold": true,
+      "id": 8
+    },
+    {
+      "userId": 8,
+      "name": "test",
+      "floorId": 2,
+      "safeId": 2,
+      "containerId": 2,
+      "productTypeId": 2,
+      "isSold": true,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "name": "test-1",
+      "floorId": 2,
+      "safeId": 2,
+      "containerId": 3,
+      "productTypeId": 4,
+      "isSold": true,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "name": "test",
+      "floorId": 2,
+      "safeId": 2,
+      "containerId": 2,
+      "productTypeId": 2,
+      "isSold": true,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "name": "liyiyoi",
+      "floorId": 2,
+      "safeId": 3,
+      "containerId": 4,
+      "productTypeId": 4,
+      "isSold": true,
+      "id": 12
     }
   ],
   "floors": [
@@ -202,7 +262,7 @@
     },
     {
       "id": 2,
-      "name": "The OG"
+      "name": "Original"
     },
     {
       "id": 3,
