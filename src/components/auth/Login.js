@@ -127,7 +127,7 @@ class Login extends Component {
                             <Button color="primary" className="add" onClick={this.handleLogin}>
                                 Sign In
 						</Button>{" "}
-                            <Button color="secondary" className="close" onClick={this.toggle}>
+                            <Button color="primary" className="close" onClick={this.toggle}>
                                 Cancel
 						</Button>
                         </ModalFooter>

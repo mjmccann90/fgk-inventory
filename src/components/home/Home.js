@@ -2,22 +2,13 @@ import React, { Component,useState } from 'react'
 import Footer from '../footer/Footer'
 import { Jumbotron, Container} from 'reactstrap';
 import "../auth/Auth.css";
+// import Carousel from './Carousel'
 
 
 
 
 class Home extends Component {
-
-
-//Carousel,
-//CarouselItem,
-//CarouselControl,
-//CarouselIndicators,
-//CarouselCaption 
-
-  
   render() {
-    
     return (
       <>
       <div>
@@ -28,7 +19,7 @@ class Home extends Component {
         </Container>
       </Jumbotron>
     </div>
-    <div>put example compononet here</div>
+    {/* <div className="carousel"><Carousel/></div> */}
       <div><Footer triggerRender={this.props.triggerRender} {...this.props}/></div>
       </>
     )

@@ -1,11 +1,3 @@
-.welcomelogo {
-    height: 75px;
-    width: 30%;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    align-items: center;
-    }
-
     .registrationDiv {
         display: flex;
         margin-top: 1em;
@@ -29,7 +21,6 @@
         background-color: rgb(3, 5, 75) !important;
 
     }
-
     .close, .add  {
         display: flex;
         justify-content: space-evenly;
