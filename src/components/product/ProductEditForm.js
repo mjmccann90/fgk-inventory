@@ -146,6 +146,8 @@ class ProductEditForm extends Component {
 									)}
 								</select>
 								: ""}
+								<br></br>
+
 
 								<label htmlFor="safe">Safe Location:</label>
 								{this.state.safes ? <select defaultValue={this.state.safeId} id="safeId" onChange={this.handleSelectChange}>
@@ -154,6 +156,7 @@ class ProductEditForm extends Component {
 									)}
 								</select>
 								: ""}
+								<br></br>
 
 								<label htmlFor="container">Container Location:</label>
 								{this.state.containers ? <select defaultValue={this.state.containerId} id="containerId" onChange={this.handleSelectChange}>
@@ -162,7 +165,7 @@ class ProductEditForm extends Component {
 									)}
 								</select>
 								: ""}
-
+								<br></br>
 								<label htmlFor="productType">Product Type: </label>
 								{this.state.productTypes ? <select defaultValue={this.state.productTypeId} id="productTypeId" onChange={this.handleSelectChange}>
 									{this.state.productTypes.map(productTypes =>
@@ -170,6 +173,8 @@ class ProductEditForm extends Component {
 									)}
 								</select>
 								: ""}
+								<br></br>
+
 							<label htmlFor="isSold">Sold: </label>
 							<input type="checkbox" id="isSold" onChange={this.handleIsSold}></input>
 							</div>

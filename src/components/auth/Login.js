@@ -64,11 +64,11 @@ class Login extends Component {
         return (
             <div>
                 <div className="header">
-                    <img
-                        className="welcomelogo"
+                    {/* <img
+                        className="fgkLogo"
                         src={require("../../images/FGK-Logo1.png")}
                         alt="logo"
-                    />
+                    /> */}
                 </div>
                 <div className="registrationDiv">
                     <Button
