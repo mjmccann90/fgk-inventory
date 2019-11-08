@@ -167,6 +167,16 @@
       "productTypeId": 4,
       "isSold": true,
       "id": 12
+    },
+    {
+      "userId": 1,
+      "name": "test",
+      "floorId": 2,
+      "safeId": 2,
+      "containerId": 3,
+      "productTypeId": 2,
+      "isSold": false,
+      "id": 13
     }
   ],
   "floors": [

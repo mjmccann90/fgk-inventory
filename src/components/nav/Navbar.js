@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter} from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import './Navbar.css'
 
 class NavBar extends Component {
@@ -10,31 +10,35 @@ class NavBar extends Component {
     this.props.clearUser();
     this.props.history.push('/');
     this.props.history.push("/login")
-}
+  }
 
-  render(){
+  render() {
 
     return (
       <header>
-        <h1  className="text">Ford Gittings and Kane Jewelers Inventory<br />
-          <small>Maybe some quote</small>
-        </h1>
-        <nav>
-          <ul className="container">
-            <li><Link className="nav-link" to="/">Home</Link></li>
-            {/* {(this.props.user) ? */}
-                <li><Link className="nav-link" to="/allProducts">All Products</Link></li>
-            {/* : null } */}
-            {/* {(this.props.user) ? */}
-                <>
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <li><Link className="nav-link" to="/">Home</Link></li>
+              {/* {(this.props.user) ? */}
+              <li><Link className="nav-link" to="/allProducts">All Products</Link></li>
+              {/* : null } */}
+              {/* {(this.props.user) ? */}
+              <>
                 <li><Link className="nav-link" to="/soldItems">Sold Products</Link></li>
                 <li><Link className="nav-link" to="/MySoldItems">My Sold Products</Link></li>
-                <li><span className="nav-link" onClick={this.handleLogout}>Logout</span></li>
-                </>
-          </ul>
+                <li><Link className="nav-link" onClick={this.handleLogout}>Logout</Link></li>
+              </>
+            </ul>
+          </div>
         </nav>
+        <h1 className="text">Ford Gittings and Kane Jewelers Inventory<br />        </h1>
       </header>
     )
   }
 }
-export default withRouter (NavBar);
+export default withRouter(NavBar);

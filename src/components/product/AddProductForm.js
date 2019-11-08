@@ -119,6 +119,7 @@ class AddProductForm extends Component {
                                     <label htmlFor="productName">
                                         Product Name:
 									</label>
+                                    <br></br>
                                     <input
                                         type="text"
                                         required
@@ -134,13 +135,14 @@ class AddProductForm extends Component {
                                             <FloorOptions key={floor.id} floor={floor}/>
                                         )}
                                     </select>
-
+                                    <br></br>
                                     <label htmlFor="safe">Safe Location:</label>
                                     <select value={this.state.safeLocation} id="safeLocation" onChange={this.handleSelectChange}>
                                         {this.state.safes.map(safe =>
                                             <SafeOptions key={safe.id} safe={safe}/>
                                         )}
                                     </select>
+                                    <br></br>
 
                                     <label htmlFor="container">Container Location:</label>
                                     <select value={this.state.containerId}id="containerId"onChange={this.handleSelectChange}>
@@ -148,6 +150,8 @@ class AddProductForm extends Component {
                                             <ContainerOptions key={container.id} container={container}/>
                                         )}
                                     </select>
+                                    <br></br>
+
 
                                     <label htmlFor="productType">Product Type:</label>
                                     <select value={this.state.productType} id="productType"onChange={this.handleSelectChange}>
