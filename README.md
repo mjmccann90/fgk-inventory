@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Capstone: Ford Gittings & Kane Inventory
 
-## Available Scripts
+Contact Info:
 
-In the project directory, you can run:
+Creator: Mark McCann
+Slack Handle: Mark McCann
+Email: mjmccann12@me.com
 
-### `npm start`
+Google Doc Link: https://docs.google.com/document/d/17Qgd4noqHT1q6NieYxYTOs7tUja40RpqgU-9S4rZadA/edit#
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Pre Proposal:
+Create an app to manage inventory at my family jewelry store for staff to add new, edit existing, and mark products as sold. Products that have been sold will populate into two tables. One table will be for all staff to see what has been sold and the second will show the users’ sales.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+MVP Definition
+User will sign in and be able to create a new user
+User-specific CRUD for up to date inventory.
+The all staff view to show everything that has been sold.
+User-specific view to show everything that has been sold.
 
-### `npm test`
+Dependencies used to create FGK Inventory:
+Functions
+Json Database
+Github
+CSS
+Flexbox
+React
+Reactstrap/Bootstrap
+Modals
+Data entry/editing
+Relational data
+Session Storage
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+How to Launch Ford Gittings and Kane Inventory:
+Clone the repository from Github
+Open your terminal and type the command "npm install" to install React
+In the main project directory, create a new directory called "API"
+In the API directory, create a file called "inventory.json"
+Copy the sample data below into database.json
+Run json-server in port -p 5002 -w inventory.json
+In the terminal, type the command "npm start". You are now ready to use Ford Gittings and Kane Inventory!

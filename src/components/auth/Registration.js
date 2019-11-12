@@ -91,12 +91,11 @@ export default class Registration extends Component {
 									required=""
 									autoFocus=""
 								/>
-								<label htmlFor="inputName">Name</label>
-
-								<label htmlFor="inputEmail">
-									Email address
-								</label>
+								<label htmlFor="inputName"></label>
 								<br></br>
+								<label htmlFor="inputEmail">
+
+								</label>
 								<input
 									onChange={this.handleFieldChange}
 									type="email"
@@ -105,7 +104,7 @@ export default class Registration extends Component {
 									required=""
 									autoFocus=""
 								/>
-
+								<br></br>
 								<input
 									onChange={this.handleFieldChange}
 									type="password"
@@ -113,7 +112,7 @@ export default class Registration extends Component {
 									placeholder="Password"
 									required=""
 								/>
-								<label htmlFor="inputPassword">Password</label>
+								<label htmlFor="inputPassword"></label>
 							</div>
 						</fieldset>
 					</form>
