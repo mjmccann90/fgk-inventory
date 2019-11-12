@@ -15,7 +15,7 @@ class NavBar extends Component {
   render() {
 
     return (
-      <header>
+      <header className="navHeader">
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />

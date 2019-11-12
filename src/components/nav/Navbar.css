@@ -56,7 +56,7 @@ small {
   {
     margin: 0;
     padding: 0;
-    color: #cdcdcd;
+    /* color: #cdcdcd; */
     font-family: "Avenir Next", "Avenir", sans-serif;
   }
   a
@@ -74,7 +74,7 @@ a:hover
 {
   display: block;
   position: relative;
-  top: 25px;
+  top: 40px;
   left: 50px;
   z-index: 1;
   -webkit-user-select: none;
@@ -84,7 +84,7 @@ a:hover
 {
   display: block;
   width: 40px;
-  height: 32px;
+  height: 40px;
   position: absolute;
   top: -7px;
   left: -5px;
@@ -188,3 +188,6 @@ html {
   box-sizing: border-box;
 }
 
+.navHeader {
+  height: 100px;
+}
